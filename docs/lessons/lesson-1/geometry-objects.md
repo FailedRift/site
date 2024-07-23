@@ -213,7 +213,7 @@ point1.geom_type
 ```
 
 There are multiple ways to access the coordinates of geometry object. For
-instance, `coords` is a `spapely.coords.CoordinateSequence`. It is an
+instance, `coords` is a `shapely.coords.CoordinateSequence`. It is an
 `Iterator`, an efficient Python data structure to iterate over lists of items,
 but for now we can simply convert it into a list of the (one pair of)
 coordinates:
@@ -249,9 +249,9 @@ It is also possible to calculate the distance between two objects using the
 [distance](https://shapely.readthedocs.io/en/stable/manual.html#object.distance)
 method.
 
-In our example the distance is calculated in a cartesian coordinate system.
+In our example, the distance is calculated in a cartesian coordinate system.
 When working with real GIS data the distance is based on the used coordinate
-reference system. always check what is the unit of measurement (for example,
+reference system. Always check what is the unit of measurement (for example,
 meters) in the coordinate reference system you are using.
 
 Let’s calculate the distance between `point1` and `point2`:
@@ -273,7 +273,7 @@ print(f"Distance between the points is {dist:.2f} units")
 :::{caution}
 
 Shapely geometries are, by design, agnostic (unaware) of the reference system
-used to represent them. Distances and surface area calculated using the
+used to represent them. Distances and surface area are calculated using the
 built-in shapely methods will always:
 a) assume a flat, Cartesian, Euclidean space, and 
 b) return the calculated value in the unit of the coordinates (e.g.,
